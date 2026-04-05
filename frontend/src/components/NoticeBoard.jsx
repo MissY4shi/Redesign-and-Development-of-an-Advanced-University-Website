@@ -23,7 +23,7 @@ const NoticeBoard = ({ user, refreshTrigger }) => {
     const handleDelete = async (id) => {
         if (window.confirm("⚠️ Are you sure you want to delete this official announcement?")) {
             try {
-                const res = await fetch(`http://localhost:5000/api/notices/${id}`, {
+                const res = await fetch(`https://redesign-and-development-of-an-advanced.onrender.com/api/notices/${id}`, {
                     method: 'DELETE',
                 });
                 if (res.ok) {

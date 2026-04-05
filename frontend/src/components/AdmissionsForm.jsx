@@ -11,7 +11,7 @@ const AdmissionsForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("http://localhost:5000/api/admissions", {
+    const res = await fetch(" https://redesign-and-development-of-an-advanced.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

@@ -12,7 +12,7 @@ const EventBoard = ({ user, refreshTrigger }) => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/events/${id}`, {
+      const res = await fetch(`https://redesign-and-development-of-an-advanced.onrender.com/api/events/${id}`, {
         method: "DELETE",
       });
       if (res.ok) {
