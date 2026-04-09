@@ -12,11 +12,14 @@ const AdminEventForm = ({ onEventPosted }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://redesign-and-development-of-an-advanced.onrender.com/api/events", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, eventDate, location }),
-      });
+      const response = await fetch(
+        "https://redesign-and-development-of-an-advanced.onrender.com/api/events",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, description, eventDate, location }),
+        },
+      );
 
       if (response.ok) {
         setTitle("");

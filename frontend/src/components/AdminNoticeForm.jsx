@@ -10,11 +10,14 @@ const AdminNoticeForm = ({ onNoticePosted }) => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://redesign-and-development-of-an-advanced.onrender.com/api/notices", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, content }),
-      });
+      const response = await fetch(
+        "https://redesign-and-development-of-an-advanced.onrender.com/api/notices",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ title, content }),
+        },
+      );
 
       if (response.ok) {
         setTitle("");

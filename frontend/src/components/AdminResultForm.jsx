@@ -15,16 +15,19 @@ const AdminResultForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://redesign-and-development-of-an-advanced.onrender.com/api/results", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          programName: "B.Tech Computer Science & Engineering",
-          academicYear: "2025-2026",
-          semester: "Semester 3",
-        }),
-      });
+      const res = await fetch(
+        "https://redesign-and-development-of-an-advanced.onrender.com/api/results",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...formData,
+            programName: "B.Tech Computer Science & Engineering",
+            academicYear: "2025-2026",
+            semester: "Semester 3",
+          }),
+        },
+      );
       if (res.ok) {
         alert("Grade Published Successfully!");
         setFormData({

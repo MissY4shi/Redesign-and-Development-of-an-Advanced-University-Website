@@ -6,7 +6,9 @@ const StudentResults = ({ rollNo, studentName }) => {
 
   useEffect(() => {
     if (rollNo && rollNo !== "undefined") {
-      fetch(`https://redesign-and-development-of-an-advanced.onrender.com/api/results/${rollNo}`)
+      fetch(
+        `https://redesign-and-development-of-an-advanced.onrender.com/api/results/${rollNo}`,
+      )
         .then((res) => res.json())
         .then((data) => {
           setResults(data);

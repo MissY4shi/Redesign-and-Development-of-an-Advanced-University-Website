@@ -11,11 +11,14 @@ const AdmissionsForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(" https://redesign-and-development-of-an-advanced.onrender.com", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    const res = await fetch(
+      "https://redesign-and-development-of-an-advanced.onrender.com/api/admissions",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      },
+    );
     if (res.ok) setSubmitted(true);
   };
 

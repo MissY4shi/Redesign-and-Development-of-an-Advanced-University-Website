@@ -4,7 +4,9 @@ const EventBoard = ({ user, refreshTrigger }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/events")
+    fetch(
+      "https://redesign-and-development-of-an-advanced.onrender.com/api/events",
+    )
       .then((res) => res.json())
       .then((data) => setEvents(data))
       .catch((err) => console.error("Error fetching events:", err));
@@ -12,9 +14,12 @@ const EventBoard = ({ user, refreshTrigger }) => {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`https://redesign-and-development-of-an-advanced.onrender.com/api/events/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `https://redesign-and-development-of-an-advanced.onrender.com/api/events/${id}`,
+        {
+          method: "DELETE",
+        },
+      );
       if (res.ok) {
         setEvents(events.filter((event) => event._id !== id));
       }

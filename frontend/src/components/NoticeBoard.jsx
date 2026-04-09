@@ -4,10 +4,12 @@ const NoticeBoard = ({ user, refreshTrigger }) => {
     const [notices, setNotices] = useState([]);
 
     const fetchNotices = () => {
-        fetch('http://localhost:5000/api/notices')
-            .then(res => res.json())
-            .then(data => setNotices(data))
-            .catch(err => console.error("Error fetching notices:", err));
+        fetch(
+          "https://redesign-and-development-of-an-advanced.onrender.com/api/notices",
+        )
+          .then((res) => res.json())
+          .then((data) => setNotices(data))
+          .catch((err) => console.error("Error fetching notices:", err));
     };
 
     useEffect(() => {
@@ -23,9 +25,12 @@ const NoticeBoard = ({ user, refreshTrigger }) => {
     const handleDelete = async (id) => {
         if (window.confirm("⚠️ Are you sure you want to delete this official announcement?")) {
             try {
-                const res = await fetch(`https://redesign-and-development-of-an-advanced.onrender.com/api/notices/${id}`, {
-                    method: 'DELETE',
-                });
+                const res = await fetch(
+                  `https://redesign-and-development-of-an-advanced.onrender.com/api/notices/${id}`,
+                  {
+                    method: "DELETE",
+                  },
+                );
                 if (res.ok) {
                     // Update the local state to remove the notice instantly
                     setNotices(notices.filter(notice => notice._id !== id));
